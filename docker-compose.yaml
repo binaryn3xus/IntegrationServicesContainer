@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  sqlcontainer2:
+    image: binaryn3xus/ssis-test
+    container_name: sqlcontainer2
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong@Passw0rd"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - D:/test/tmp/:/tmp/
+      - D:/test/source/:/ssis-projects/
+    mem_limit: 2048M
